@@ -1,0 +1,762 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://Dagangduit.com/indicator/v1
+// Indicator Dagang Duit V.1 ( Premium )
+// © Dagang Duit Core Team
+// @version=5             
+					 
+//               *           @@@@@@@@@@@@             @@@@@@@            @@@@@@@@@@@@            @@@@@@@        @@@@@@@     @@@@@@       @@@@@@@@@@@@              *                        
+//             ***           @@@@@@@@@@@@@@@         @@@@@@@@@         @@@@@@@@@@@@@@@@         @@@@@@@@@       @@@@@@@@    @@@@@@     @@@@@@@@@@@@@@@@             ***                      
+//            ****           @@@@@@@@@@@@@@@@@      @@@@@@@@@@@      @@@@@@@@@@@@@@@@@@        @@@@@@@@@@@      @@@@@@@@@@  @@@@@@    @@@@@@@@@@@@@@@@@             ****                     
+//           *****           @@@@@@    @@@@@@@@    @@@@@@ @@@@@@    @@@@@@@                   @@@@@@  @@@@@     @@@@@@@@@@@@@@@@@@   @@@@@@@                        *****                    
+//          *******          @@@@@@     @@@@@@@   @@@@@     @@@@@   @@@@@@     @@@@@@@@@     @@@@@      @@@@    @@@@@@@@@@@@@@@@@@   @@@@@@    @@@@@@@@@            *******                   
+//         ********          @@@@@@    @@@@@@@@  @@@@@@     @@@@@@  @@@@@@@       @@@@@@    @@@@@@      @@@@@   @@@@@@  @@@@@@@@@@   @@@@@@@      @@@@@@            ********                  
+//         ********          @@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@  @@@@@@   @@@@@@@@@    @@@@@@@@@@@@@@@@@@            ********                  
+//         *********         @@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@  @@@@@@    @@@@@@@@     @@@@@@@@@@@@@@@@            *********                  
+//         *********         @@@@@@@@@@@@@      @@@@@@       @@@@@@     @@@@@@@@@@@@@      @@@@@@       @@@@@@  @@@@@@     @@@@@@@       @@@@@@@@@@@@@             *********
+//         **********                      																										   		 	      **********
+//    *     **********                                                                                                                                           **********     *             
+//    **     **********                                                                                                                                         **********     **             
+//   ****     **********                                     @@@@@@@@@@@@        @@@@@@     @@@@@@  @@@@@@@  @@@@@@@@@@@@@@@                                   **********     ****            
+//   *****     **********                                    @@@@@@@@@@@@@@@     @@@@@@     @@@@@@  @@@@@@@  @@@@@@@@@@@@@@@                                  **********     *****            
+//   *******    **********                                   @@@@@@@@@@@@@@@@@   @@@@@@     @@@@@@  @@@@@@@  @@@@@@@@@@@@@@@                                 **********    *******            
+//   ********    **********                                  @@@@@@    @@@@@@@@  @@@@@@     @@@@@@  @@@@@@@      @@@@@@                                     **********    ********             
+//    *********    **********                                @@@@@@     @@@@@@@  @@@@@@     @@@@@@  @@@@@@@      @@@@@@                                   **********    *********             
+//     *********     *********                               @@@@@@    @@@@@@@@  @@@@@@     @@@@@@  @@@@@@@      @@@@@@                                  *********     *********              
+//      **********    **********                             @@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@  @@@@@@@      @@@@@@                                **********    **********               
+//        **********    *********                            @@@@@@@@@@@@@@@      @@@@@@@@@@@@@@@   @@@@@@@      @@@@@@                               *********    **********                 
+//         ***********    *********                          @@@@@@@@@@@@@          @@@@@@@@@@@     @@@@@@@      @@@@@@                             *********    ***********                  
+//       *   ***********    *********                                                                                                             *********    ***********   *                
+//        ***  ************   *********                                                                                                         *********   ************  ***                 
+//         ****   ************ **********                                       %%%%%%%%%%   ##########                                       *********  ************   ****                  
+//          ******   ************ **********                                    %%%%%%%%%%   ##########                                    ********** *************   ******                   
+//            *******   **********************                                  %%%%%%%%%%%%###########                                  **********************   *******                     
+//               *********   *********************                             %%%%%%%%%%%%%%######################                    *********************   *********                       
+//                 ************  ********************                       %%%%%%%%%%%%%%%%%#####################                  ********************  ************                         
+//                    *********************************                  %%%%%%%%%%%%%%%%%%%####################                *********************************                             
+//                 ***    ********************************             %%%%%%%%%%%%%%%%%%%%%###################              ********************************    ***                          
+//                   *********     ****************************       %%%%%%%%%%%%%%%%%%%%%%##################          ****************************     *********                            
+//                      ****************************************     %%%%%%%%%%%%%%%%%%%%%%%#################         *****************************************                               
+//                         **************************************    %%%%%%%%%%%%%%%%%%      ################        ***************************************                                  
+//                               ********************************    %%%%%%%%%%%%%%%%%%%%%   ##########              ********************************                                        
+//                             **          **********************    %%%%%%%%%%%%%%%%%%%%%%%###########              **********************          **                                      
+//                                *******************************     %%%%%%%%%%%%%%%%%%%%%%###########              *******************************                                         
+//                                       ******       ***********      %%%%%%%%%%%%%%%%%%%%%###############          **********       *******                                                
+//                                                *********  ******       %%%%%%%%%%%%%%%%%%###################     ******  ********                                                         
+//                                                         ********         %%%%%%%%%%%%%%%%####################    ********                                                                  
+//                                                       ** *******             %%%%%%%%%%%%#####################   ******* **                                                                
+//                                                    **   *** ****             %%%%%%%%%%%%######################  **** ***   **                                                             
+//                                                  *     ***  ****             %%%%%%%%%%    ####################  ****  ***     *                                                             
+//                                                       ***  ****        %%%%%%%%%%%%%%%%      ##################   ****  ***                                                                
+//                                                     **     ***        %%%%%%%%%%%%%%%%%%%######################    ***     **                                                              
+//                                                    *      ***        %%%%%%%%%%%%%%%%%%%%#####################      ***      *                                                              
+//                                                          *          %%%%%%%%%%%%%%%%%%%%%####################          *                                                                   
+//                                                                    %%%%%%%%%%%%%%%%%%%%%%###################                                                                               
+//                                                                   %%%%%%%%%%%%%%%%%%%%%%%##################                                                                                 
+//                                                                      %%%%%%%%%%%%%%%%%%%%###############                                                                                    
+//                                                                            %%%%%%%%%%%%%%###########                                                                                       
+//                                                                              %%%%%%%%%%   ##########                                                                                       
+//                                                                              %%%%%%%%%%   ##########                                                                                       
+//                                                                              %%%%%%%%%%   ##########                                                                                       
+                                                                                                                          
+																						                                 
+//   =============================================================================================================================================================================
+//   ==============================================================                WWW.DAGANGDUIT.COM               ==============================================================
+//   ==============================================================             MODAL KECIL UNTUNG BESAR            ==============================================================
+//   =============================================================================================================================================================================
+         		                                                                                                                             
+          			                                                                                                                              
+    		                                                                                                                             
+//   ============================================================================================================================================================================= 
+//   ==============================================================                    DISCLAIMER                  ===============================================================
+//   =============================================================================================================================================================================
+//   =================               INDONESIAN                    ================================================              ENGLISH            ============================== 
+//   =============================================================================================================================================================================
+//   *  Ini adalah implementasi yang bagus dari indikator Dagang Duit.                 ==========           *  This   is  a  nice  implementation   of  the Dagang Duit indicator.
+// 	    untuk   memanfaatkan   Algoritma   Pembelajaran  Mesin  dasar.                 ==========              to     utilize        basic      Machine    Learning     Algorithms 
+//  	untuk   membantu    mengklasifikasikan    persilangan   lilin.                 ==========              to          help           classify          candle        crosses. 
+			                                                                                              
+																										  
+//   *  Indikator    Dagang       Duit       membutuhkan     pelatihan                 ==========           *  Dagang    Duit    Indicators    require    extensive   training and 
+// 	    dan   latihan  ekstensif  bagi  pengguna  untuk  mengembangkan                 ==========              practice  for   the   user   to   develop   sufficient    intuition 
+// 	    intuisi  yang  cukup  untuk  menafsirkan   persilangan  Lilin.                 ==========              to               interpret             Candles             crosses.
+
+				  
+//   *  Tujuan dari versi ini  adalah untuk membantu pengguna memahami                 ==========           *  The   aim   of  this   version   is   to   help   users  understand  
+// 	    logika        yang      mendasari     indikator    Dagang Duit                 ==========              the    logic     underlying    the    Dagang     Duit     indicator
+// 	    dan     memberikan    cara    yang    lebih   intuitif   untuk                 ==========              and  provide a  more  intuitive  way of interpreting the indicator.
+// 	    menginterpretasikan          indikator               tersebut.                 ==========                                              
+
+				  
+//   *  Sinyal harus ditafsirkan sebagai saran, bukan sebagai kumpulan                 ==========           *  Signals          should      be      interpreted   as  suggestions, 
+//      aturan          yang              dikodekan             keras.                 ==========              not      as        hard         coded      sets      of      rules.
+
+				  
+// CATATAN: Harap  JANGAN  memperdagangkan  sinyal secara membabi buta.                ==========      NOTE :  Please        DO        NOT       trade       signals      blindly. 
+// 		    Selalu    coba      gunakan    intuisi     Anda    sendiri                 ==========              Always  try    to   use    your    own   intuition   to  understand  
+// 	        untuk    memahami    gulunngan   dan   periksa   pertemuan                 ==========              the     rolls     and      check     confluence     with      other 
+// 	        dengan  indikator  lain   sebelum   memulai   perdagangan.                 ==========              indicators           before         starting        a        trade.
+			    
+// ===============================================================================================================================================================================
+
+
+indicator ('Dagang Duit', format = format.price , precision = 6, overlay =true)
+
+// import DagangDuit library
+import DagangDuit.pine
+
+colors = input.string(title='Color Scheme', defval='BRIGHT', options=['DARK', 'BRIGHT'])
+
+// Color Scheme
+
+bullcolor = colors == 'DARK' ? color.white : color.green
+bearcolor = colors == 'DARK' ? color.blue : color.red
+traslinecolor = colors == 'DARK' ? color.rgb(18, 153, 0) : color.rgb(5, 139, 0)
+traslinecolor2 = colors == 'DARK' ? color.rgb(255, 0, 0) : color.rgb(255, 0, 0)
+textcolors = colors == 'DARK' ? color.rgb(0, 0, 0) : color.rgb(255, 255, 255)
+breakcolors = colors == 'DARK' ? color.rgb(255, 255, 255) : color.rgb(0, 34, 184)
+breakcolors2 = colors == 'DARK' ? color.rgb(1, 225, 255) : color.rgb(0, 0, 0)
+ 
+
+// ===============================================================================================================================================================================
+// ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== TOOLTIP ===== T
+// ===============================================================================================================================================================================
+
+
+string SHOW_MA               = 'Moving Average adalah metode statistik yang digunakan untuk menghitung rata-rata pergerakan data dalam jangka waktu tertentu. Ini menghilangkan fluktuasi harga jangka pendek dan memberikan pandangan yang lebih luas tentang tren jangka panjang. Terdapat beberapa jenis moving average, seperti simple moving average (SMA) dan exponential moving average (EMA). Untuk Menonaktifkan fitur ini, pergilah ke pengaturan "Style" lalu hilangkan centang pada bagian "EMA"'
+string SHOW_Trendline        = 'Trendline adalah garis yang ditarik melalui titik harga dalam suatu grafik untuk menunjukkan tren dalam data. Ini biasanya digunakan dalam analisis teknikal untuk menentukan tren jangka panjang dan untuk mengidentifikasi titik masuk dan keluar dalam suatu trade. Trendline dapat berupa garis miring (garis tren) atau garis horizontal (garis dukungan atau resistensi) dan sering digunakan bersama dengan indikator lain seperti moving average untuk memvalidasi tren.'
+string SHOW_BB               = 'Bollinger Bands adalah indikator teknikal yang menggabungkan moving average dan deviasi standar harga untuk menentukan batas atas dan bawah dalam suatu grafik. Ini membantu untuk mengidentifikasi kondisi pasar overbought (terlalu tinggi) atau oversold (terlalu rendah) dan juga dapat digunakan untuk menentukan titik masuk dan keluar dalam suatu trade. Bollinger Bands terdiri dari tiga garis: garis tengah (SMA), garis atas (dibentuk dengan menambahkan deviasi standar ke SMA) dan garis bawah (dibentuk dengan mengurangi deviasi standar dari SMA).Untuk Menonaktifkan fitur ini, pergilah ke pengaturan "Style" lalu hilangkan centang pada bagian yang bertuliskan "BANDS"'
+string SHOW_S1               = 'Signal Dagang Duit Sakti I adalah sinyal yang dihasilkan oleh suatu indikator teknikal untuk memberikan rekomendasi jual atau beli dalam suatu trade. Sinyal ini biasanya dihasilkan setelah indikator menemukan kondisi pasar tertentu, seperti overbought atau oversold, atau melalui interaksi dengan harga atau garis tren lain. Indicator signal sering digunakan sebagai dasar untuk membuat keputusan trading, tetapi harus digunakan bersama dengan analisis lain, seperti analisis fundamental, untuk memastikan keputusan yang tepat.'
+string SHOW_S2               = 'Signal Dagang Duit Sakti II adalah sinyal yang dihasilkan oleh suatu indikator teknikal untuk memberikan rekomendasi jual atau beli dalam suatu trade. Sinyal ini biasanya dihasilkan setelah indikator menemukan kondisi pasar tertentu, seperti overbought atau oversold, atau melalui interaksi dengan harga atau garis tren lain. Indicator signal sering digunakan sebagai dasar untuk membuat keputusan trading, tetapi harus digunakan bersama dengan analisis lain, seperti analisis fundamental, untuk memastikan keputusan yang tepat.'
+string SHOW_S3               = 'Signal Dagang Duit Sakti IIII adalah sinyal yang dihasilkan oleh suatu indikator teknikal untuk memberikan rekomendasi jual atau beli dalam suatu trade. Sinyal ini biasanya dihasilkan setelah indikator menemukan kondisi pasar tertentu, seperti overbought atau oversold, atau melalui interaksi dengan harga atau garis tren lain. Indicator signal sering digunakan sebagai dasar untuk membuat keputusan trading, tetapi harus digunakan bersama dengan analisis lain, seperti analisis fundamental, untuk memastikan keputusan yang tepat.'
+string SHOW_Alert            = 'Custom Price Alert membantu trader memantau harga aset dan membuat keputusan trading yang tepat dengan memanfaatkan momen tertentu. Ini juga membantu trader untuk meminimalisir risiko ketinggalan momentum pasar yang penting. Custom price alert dapat dikonfigurasi dengan mudah dan dapat diterapkan pada sejumlah aset, seperti saham, mata uang, komoditas, dan cryptocurrency.'
+string SHOW_OB               = 'Order Block adalah area di mana banyak pesanan beli atau jual ditempatkan pada harga tertentu. Ini dapat mempengaruhi pergerakan harga dan menunjukkan kondisi pasar yang kuat.'
+string SHOW_MM				 = 'Money Management adalah teknik untuk mengelola modal trading dengan bijaksana. Ini melibatkan perencanaan dan pengendalian risiko untuk memastikan bahwa trader dapat bertahan dalam jangka panjang. Money management membantu trader membatasi kerugian dan memaksimalkan potensi keuntungan. Beberapa teknik money management meliputi pembatasan risiko per trade, diversifikasi portofolio, dan pengendalian emosi. Money management adalah bagian penting dari sukses dalam trading dan harus diintegrasikan ke dalam rencana trading setiap trader. Untuk Menonaktifkan fitur ini, pergilah ke pengaturan "Style" lalu hilangkan centang pada bagian "Label"'
+string SHOW_SNR              = 'Support dan resistance adalah tingkat harga di pasar keuangan di mana aksi jual/beli besar terjadi, menyebabkan sulitnya pergerakan harga melewati level tersebut. Digunakan dalam analisis teknikal untuk memprediksi arah harga.'
+
+
+// ===============================================================================================================================================================================
+// ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL LOT ==== LABEL
+// ===============================================================================================================================================================================
+
+show_MM = input(false,'Money Management'
+  , group = 'Money Management'
+  , tooltip = SHOW_MM)
+
+// Inputs
+//i_type = input("Forex", "Market", options = ["Forex", "Metals", "Index"])
+i_accountValue = input(500, 'Account Balance')
+i_accountCurrency = input('USD', 'Account Currency')
+i_risk = input(100, 'Risk Percentage') / 100
+i_atrlength = input.int(title='ATR Length', defval=14, minval=1)
+i_atrsmoothing = input.string(title='ATR Smoothing', defval='EMA', options=['RMA', 'SMA', 'EMA', 'WMA'])
+i_slMult = input(3, 'Stop Loss Multiplier')
+i_tpMult = input(7.5, 'Take Profit Multiplier')
+i_horizontalOffset = input(20, 'Panel Horizontal Offset')
+i_verticalOffset = input.int(0, 'Panel Vertical Offset', minval=0)
+
+
+//lotSize = LotSize == "Standard Lot" ? 100000 : LotSize == "Mini Lot" ? 10000 : 1000
+
+baseCurrency() =>
+    str.replace_all(syminfo.ticker, syminfo.currency, '')
+
+// ATR Calculation
+ma_function(smooth, source, atrlength) =>
+    if smooth == 'RMA'
+        ta.rma(source, atrlength)
+    else
+        if smooth == 'SMA'
+            ta.sma(source, atrlength)
+        else
+            if smooth == 'EMA'
+                ta.ema(source, atrlength)
+            else
+                ta.wma(source, atrlength)
+
+_atr = ma_function(i_atrsmoothing, ta.tr(true), i_atrlength)
+
+// Risk Percentage
+risk = i_risk * i_accountValue
+
+// Calculate stop loss and take profit
+pipMovement = syminfo.mintick == 0.01 ? 100 : syminfo.mintick == 0.001 ? 1000 : syminfo.mintick == 0.0001 ? 10000 : syminfo.mintick == 0.00001 ? 100000 : 1
+stopLossPips = _atr * i_slMult * pipMovement  // Stop loss in pips
+takeprofitPips = _atr * i_tpMult * pipMovement  // Take Profit in pips
+
+// Convert to Account Currency
+sec01 = i_accountCurrency == syminfo.currency ? syminfo.ticker : syminfo.currency + i_accountCurrency
+sec03 = i_accountCurrency == syminfo.currency ? 1 : request.security(sec01, timeframe.period, close)
+
+valuePerPips = risk / stopLossPips
+positionSize = valuePerPips / sec03 / (syminfo.mintick == 0.001 ? 1000 : 10) * 100000
+
+// EVZ Euro Currency Volatility Index
+evz = request.security('CBOE:EVZ', timeframe.period, close)
+
+// Labels
+labelText = '~ Dagang Duit ~' + '\n____,,,,____' + '\n' 
+  + '\nB:' + str.tostring(i_accountValue) + ' ' + i_accountCurrency  
+  + '\nR:' + str.tostring(i_risk * 100) + ' % ' 
+  + '\n$:' + str.tostring(risk) + ' ' + i_accountCurrency
+  //+ '\nEVZ:' + str.tostring(evz, '#.##') 
+  + '\nATR:' + str.tostring(math.round(_atr, 5))
+  + '\nSL:' + str.tostring(math.round(stopLossPips)) + ' Point' 
+  + '\nTP:' + str.tostring(math.round(takeprofitPips)) + ' Point' 
+  //+ '\nLot Size:' + str.tostring(positionSize,'#.##') + 'Lot Standart' 
+  + '\nLot:' + str.tostring(valuePerPips, '#.##') 
+
+
+var label _label =show_MM ? label.new(x=na, y=na, text='', textalign=text.align_center, textcolor=color.white, color=#009013, style=label.style_label_center, size=size.normal, xloc=xloc.bar_time, yloc=yloc.price) : na
+
+label.set_text(_label, labelText)
+label.set_xy(_label, timenow + math.round(ta.change(time) * i_horizontalOffset), ohlc4[i_verticalOffset])
+
+// Draw lines for StopLoss and TakeProfit
+line_stopLossLong = close - _atr * i_slMult
+line_stopLossShort = close + _atr * i_slMult
+line_takeProfitLong = close + _atr * i_tpMult
+line_takeProfitShort = close - _atr * i_tpMult
+
+
+// ===============================================================================================================================================================================
+// ===== SIGNAL DAGANG DUIT SAKTI I =====  SIGNAL DAGANG DUIT SAKTI I =====  SIGNAL DAGANG DUIT SAKTI I =====  SIGNAL DAGANG DUIT SAKTI I =====  SIGNAL DAGANG DUIT SAKTI I ===== 
+// ===============================================================================================================================================================================	
+
+
+show_S1 = input(false, 'Signal Dagang Duit Sakti I'
+  , group = 'Signal Dagang Duit Sakti I'
+  , tooltip = SHOW_S1)
+
+amplitude = input(title='S1 Amplitude', defval=4)
+channelDeviation = input(title='S1 Channel Deviation', defval=2)
+showArrows = input(title='S1 Show Arrows', defval=true)
+showChannels = input(title='S1 Show Channels', defval=true)
+
+var int trend = 0
+var int nextTrend = 0
+var float maxLowPrice = nz(low[1], low)
+var float minHighPrice = nz(high[1], high)
+
+var float up = 0.0
+var float down = 0.0
+float atrHigh = 0.0
+float atrLow = 0.0
+float arrowUp = na
+float arrowDown = na
+
+atr2 = ta.atr(100) / 2
+dev = channelDeviation * atr2
+
+highPrice = high[math.abs(ta.highestbars(amplitude))]
+lowPrice = low[math.abs(ta.lowestbars(amplitude))]
+highma = ta.sma(high, amplitude)
+lowma = ta.sma(low, amplitude)
+
+if nextTrend == 1 and show_S1
+    maxLowPrice := math.max(lowPrice, maxLowPrice)
+
+    if highma < maxLowPrice and close < nz(low[1], low)
+        trend := 1
+        nextTrend := 0
+        minHighPrice := highPrice
+        minHighPrice
+else
+    minHighPrice := math.min(highPrice, minHighPrice)
+
+    if lowma > minHighPrice and close > nz(high[1], high)
+        trend := 0
+        nextTrend := 1
+        maxLowPrice := lowPrice
+        maxLowPrice
+
+if trend == 0 and show_S1
+    if not na(trend[1]) and trend[1] != 0
+        up := na(down[1]) ? down : down[1]
+        arrowUp := up - atr2
+        arrowUp
+    else
+        up := na(up[1]) ? maxLowPrice : math.max(maxLowPrice, up[1])
+        up
+    atrHigh := show_S1 ? up + dev : na
+    atrLow := show_S1 ? up - dev : na
+    atrLow
+else
+    if not na(trend[1]) and trend[1] != 1
+        down := na(up[1]) ? up : up[1]
+        arrowDown := down + atr2
+        arrowDown
+    else
+        down := na(down[1]) ? minHighPrice : math.min(minHighPrice, down[1])
+        down
+    atrHigh :=show_S1 ? down + dev : na
+    atrLow :=show_S1 ? down - dev : na
+    atrLow
+
+ht =show_S1 ? trend == 0 ? up : down : na
+
+var color buyColor = color.rgb(20, 172, 6)
+var color sellColor = color.red
+
+htColor = trend == 0 ? buyColor : sellColor
+htPlot = plot(ht, title='S1 Super Line', linewidth=2, color=htColor)
+
+atrHighPlot = plot(showChannels ? atrHigh : na, title='S1 ATR High', style=plot.style_circles, color=color.new(buyColor, 0))
+atrLowPlot = plot(showChannels ? atrLow : na, title='S1 ATR Low', style=plot.style_circles, color=color.new(sellColor, 0))
+
+fill(htPlot, atrHighPlot, title='S1 ATR High Ribbon', color=color.new(buyColor, 90))
+fill(htPlot, atrLowPlot, title='S1 ATR Low Ribbon', color=color.new(sellColor, 90))
+
+buySignal = not na(arrowUp) and trend == 0 and trend[1] == 1 and show_S1
+sellSignal = not na(arrowDown) and trend == 1 and trend[1] == 0 and show_S1
+
+
+// ===============================================================================================================================================================================
+// ==== SIGNAL DAGANG DUIT SAKTI II ==== SIGNAL DAGANG DUIT SAKTI II  SIGNAL DAGANG DUIT SAKTI II  SIGNAL DAGANG DUIT SAKTI II  SIGNAL DAGANG DUIT SAKTI II  SIGNAL DAGANG DUIT SA
+// ===============================================================================================================================================================================
+
+
+show_S2 = input(false, 'Signal Dagang Duit Sakti II'
+  , group = 'Signal Dagang Duit Sakti II'
+  , tooltip = SHOW_S2)
+
+no = input(7, title='S2 Swing')
+
+res = ta.highest(high, no)
+sup = ta.lowest(low, no)
+iff_1 = close < sup[1] ? -1 : 0
+avd = close > res[1] ? 1 : iff_1
+avn = ta.valuewhen(avd != 0, avd, 0)
+tsl = show_S2 ? avn == 1 ? sup : res : na
+
+
+risk_atr = ta.atr(i_atrlength)
+
+inLongPosition = false
+inShortPosition = false
+float lowerLevel = na
+float upperLevel = na
+
+
+a = input(15, "S2 Percent K Length")
+b = input(3, "S2 Percent D Length")
+ob = input(40, "S2 Overbought")
+os = input(-40, "S2 Oversold")
+// Range Calculation
+ll = ta.lowest (low, a)
+hh = ta.highest (high, a)
+diff = hh - ll
+rdiff = close - (hh+ll)/2
+
+avgrel = ta.ema(ta.ema(rdiff,b),b)
+avgdiff = ta.ema(ta.ema(diff,b),b)
+// SMI calculations
+SMI = avgdiff != 0 ? (avgrel/(avgdiff/2)*100) : 0
+SMIsignal = ta.ema(SMI,b)
+emasignal = ta.ema(SMI, 10)
+
+level_40 = 40
+level_40smi = SMIsignal > level_40 ? SMIsignal : level_40
+
+level_m40 = -40
+level_m40smi = SMIsignal < level_m40 ? SMIsignal : level_m40
+
+Buy = false
+Sell = false
+
+inPosition = inLongPosition or inShortPosition
+
+if not inPosition and show_S2 
+    Buy := ta.crossover(close,tsl) and SMIsignal < level_m40 and emasignal < level_m40 
+    Buy
+if not inPosition and show_S2 
+    Sell := ta.crossunder(close,tsl) and SMIsignal > level_40 and emasignal > level_40
+    Sell
+
+	
+inLongPosition := Buy ? true : inLongPosition[1]
+inShortPosition := Sell ? true : inShortPosition[1]
+lowerLevel := lowerLevel[1]
+upperLevel := upperLevel[1]
+
+if Buy 
+    upperLevel := close + risk_atr * i_tpMult
+    lowerLevel := close - risk_atr * i_slMult
+    lowerLevel
+
+if Sell 
+    upperLevel := close + risk_atr * i_slMult
+    lowerLevel := close - risk_atr * i_tpMult
+    lowerLevel
+
+bool winLong = false
+bool winShort = false
+bool loseLong = false
+bool loseShort = false
+
+if inLongPosition 
+    winLong := close >= upperLevel
+    loseLong := close <= lowerLevel
+    loseLong
+
+if inShortPosition 
+    winShort := close <= lowerLevel
+    loseShort := close >= upperLevel
+    loseShort
+
+if winLong or loseLong
+    inLongPosition := false
+    inLongPosition
+
+if winShort or loseShort
+    inShortPosition := false
+    inShortPosition
+
+colr = show_S2 and close >= tsl ? color.green : close <= tsl ? color.rgb(255, 82, 82) : na
+
+// ===============================================================================================================================================================================
+// ==== SIGNAL DAGANG DUIT SAKTI III ==== SIGNAL DAGANG DUIT SAKTI III ==== SIGNAL DAGANG DUIT SAKTI III ==== SIGNAL DAGANG DUIT SAKTI III ==== SIGNAL DAGANG DUIT SAKTI III ==== 
+// ===============================================================================================================================================================================
+
+show_S3 = input(false, 'Signal Dagang Duit Sakti III'
+  , group = 'Signal Dagang Duit Sakti III'
+  , tooltip = SHOW_S3)
+
+Periods = input(title='atr Period', defval=7)
+Multiplier = input.float(title='atr Multiplier', step=0.1, defval=3.0)
+Source_s3 = hl2
+atr3 = ta.atr(Periods)
+
+up3 = show_S3 ? Source_s3 - Multiplier * atr3 : na
+up1 = show_S3 ? nz(up3[1], up3) : na
+up3 := show_S3 ? close[1] > up1 ? math.max(up3, up1) : up3 : na
+
+dn = show_S3 ? Source_s3 + Multiplier * atr3 : na
+dn1 = show_S3 ? nz(dn[1], dn) : na
+dn := show_S3 ? close[1] < dn1 ? math.min(dn, dn1) : dn : na
+
+trend1 = 1
+trend1 := nz(trend1[1], trend1)
+trend1 := show_S3 ? trend1 == -1 and close > dn1 ? 1 : trend1 == 1 and close < up1 ? -1 : trend1 : na
+
+Buy3 = show_S3 ? trend1 == 1 and trend1[1] == -1 : na
+Sell3 = show_S3 ? trend1 == -1 and trend1[1] == 1 : na
+
+longFillColor = trend1 == 1 ? color.green : color.white
+shortFillColor = trend1 == -1 ? color.red : color.white
+
+buycontiue = ta.barssince(Sell3) > ta.barssince(Buy3)
+sellcontinue = ta.barssince(Buy3) > ta.barssince(Sell3)
+
+
+// ===============================================================================================================================================================================
+// ===== Support And Resistance ===== Support And Resistance ===== Support And Resistance ===== Support And Resistance ===== Support And Resistance ===== Support And Resistance =
+// ===============================================================================================================================================================================
+
+show_SNR = input(false, 'Support And Resistance'
+  , group = 'Support And Resistance'
+  , tooltip = SHOW_SNR)
+
+window1 = input(title='Support And Resistance', defval=8)
+
+top1 = show_SNR ? ta.valuewhen(high >= ta.highest(high, window1), high, 0) : na
+bot1 = show_SNR ? ta.valuewhen(low <= ta.lowest(low, window1), low, 0) : na
+
+
+
+// ===============================================================================================================================================================================
+// ===== MOVING AVERAGE ===== MOVING AVERAGE ===== MOVING AVERAGE ===== MOVING AVERAGE ===== MOVING AVERAGE ===== MOVING AVERAGE ===== MOVING AVERAGE ===== MOVING AVERAGE ===== M
+// ===============================================================================================================================================================================
+
+
+show_MA = input(false,'Moving Average'
+  , group = 'Moving Average'
+  , tooltip = SHOW_MA)
+
+src = input(close, title="Source EMA")
+
+line1 = input.int(15, minval=2, title="EMA 1")
+line2 = input.int(21, minval=2, title="EMA 2")
+line3 = input.int(26, minval=2, title="EMA 3")
+line4 = input.int(34, minval=2, title="EMA 4")
+line5 = input.int(200, minval=2, title= "EMA 5")
+ 
+ema1 =show_MA ? ta.ema(src, line1) : na
+ema2 =show_MA ? ta.ema(src, line2) : na
+ema3 =show_MA ? ta.ema(src, line3) : na
+ema4 =show_MA ? ta.ema(src, line4) : na
+ema5 =show_MA ? ta.ema(src, line5) : na
+
+
+// ===============================================================================================================================================================================
+// ===== BOLLINGER BANDS DAGANG DUIT ===== BOLLINGER BANDS DAGANG DUIT ===== BOLLINGER BANDS DAGANG DUIT ===== BOLLINGER BANDS DAGANG DUIT ===== BOLLINGER BANDS DAGANG DUIT =====
+// ===============================================================================================================================================================================
+
+
+// show_BB = input(false, 'Bollinger Bands'
+//   , group = 'Bollinger Bands'
+//   , tooltip = SHOW_BB)
+
+// length_BB = input.int(20, minval=1, title="Length Bands",group = 'Bollinger Bands')
+// src_BB = input(close, title="Source Bands",group = 'Bollinger Bands')
+// mult_BB = input.float(2.0, minval=0.001, maxval=50, title="StdDev Bands",group = 'Bollinger Bands')
+// basis_BB =show_BB ? ta.sma(src_BB, length_BB) : na
+// dev_BB = mult_BB * ta.stdev(src_BB, length_BB)
+// upper_BB =show_BB ? basis_BB + dev_BB :na 
+// lower_BB =show_BB ? basis_BB - dev_BB : na
+// offset_BB = input.int(0, "Offset Bands", minval = -500, maxval = 500,group = 'Bollinger Bands')
+
+
+// ===============================================================================================================================================================================
+// ===== ORDER BLOCK DAGANG DUIT ===== ORDER BLOCK DAGANG DUIT ===== ORDER BLOCK DAGANG DUIT ===== ORDER BLOCK DAGANG DUIT ===== ORDER BLOCK DAGANG DUIT ===== ORDER BLOCK DAGANG 
+// ===============================================================================================================================================================================
+
+
+show_OB = input(false, 'Order Block Dagang Duit'
+  , group = 'Order Block Dagang Duit'
+  , tooltip = SHOW_OB)
+
+periods2 = input(5, 'Relevant Periods to identify OB')  // Jumlah lilin berikutnya yang diperlukan dalam arah yang sama untuk mengidentifikasi OB
+threshold = input.float(0.1, 'Min. Percent move to identify OB', step=0.1)  // Memerlukan % pergerakan minimum (dari potensi OB yang dekat dengan candle terakhir berikutnya untuk mengidentifikasi Order Block)
+usewicks = input(true, 'Use whole range [High/Low] for OB marking?')  // Tampilkan kisaran Tinggi/Rendah untuk setiap OB alih-alih Buka/Rendah untuk Bullish / Buka/Tinggi untuk Bearish
+showbull = input(true, 'Show latest Bullish Channel?')  // Tampilkan Saluran untuk Bullish OB terbaru?
+showbear = input(true, 'Show latest Bearish Channel?')  // Tampilkan Saluran untuk Bearish OB terbaru?
+
+ob_period = periods2 + 1  // Identifikasi lokasi lilin Order Block yang relevan
+absmove = math.abs(close[ob_period] - close[1]) / close[ob_period] * 100  // Hitung persentase pergerakan absolut dari potensi OB ke candle terakhir dari candle berikutnya
+relmove = absmove >= threshold  // Identifikasi "Pergerakan yang relevan" dengan membandingkan perpindahan absolut dengan ambang batas
+
+
+// Bullish Order Block Identification // Bullish Order Block Identifikasi
+bullishOB = close[ob_period] < open[ob_period]  // Tentukan potensi candle Bullish OB (lilin merah)
+
+int upcandles = 0
+for i = 1 to periods2 by 1
+    upcandles += (close[i] > open[i] ? 1 : 0)  // Tentukan warna lilin berikutnya (semuanya harus berwarna hijau untuk mengidentifikasi Bearish OB yang valid)
+    upcandles
+
+OB_bull = bullishOB and upcandles == periods2 and relmove  // Logika identifikasi (lilin OB merah & lilin hijau selanjutnya)
+OB_bull_high = OB_bull ? usewicks ? high[ob_period] : open[ob_period] : na  // Tentukan batas atas OB (Buka atau Tinggi tergantung input)
+OB_bull_low = OB_bull ? low[ob_period] : na  // Tentukan batas bawah OB (Low)
+OB_bull_avg = (OB_bull_high + OB_bull_low) / 2  // Tentukan garis tengah OB
+
+
+// Bearish Order Block Identification // Identifikasi Blok Pesanan Bearish
+bearishOB = close[ob_period] > open[ob_period]  // Tentukan potensi candle Bearish OB (lilin hijau)
+
+int downcandles = 0
+for i = 1 to periods2 by 1
+    downcandles += (close[i] < open[i] ? 1 : 0)  // Menentukan warna candle berikutnya (harus berwarna merah untuk mengidentifikasi Bearish OB yang valid)
+    downcandles
+
+OB_bear = bearishOB and downcandles == periods2 and relmove  // Logika identifikasi (lilin OB hijau & lilin hijau berikutnya)
+OB_bear_high = OB_bear ? high[ob_period] : na  // Menentukan batas atas OB (Tinggi)
+OB_bear_low = OB_bear ? usewicks ? low[ob_period] : open[ob_period] : na  // Tentukan batas bawah OB (Buka atau Rendah tergantung input)
+OB_bear_avg = (OB_bear_low + OB_bear_high) / 2  // Tentukan garis tengah OB
+
+
+var line linebull1 = na  // Bullish OB average 
+var line linebull2 = na  // Bullish OB open
+var line linebull3 = na  // Bullish OB low
+var line linebear1 = na  // Bearish OB average
+var line linebear2 = na  // Bearish OB high
+var line linebear3 = na  // Bearish OB open
+
+if OB_bull and showbull and show_OB
+    line.delete(linebull1)
+    linebull1 := line.new(x1=bar_index, y1=OB_bull_avg, x2=bar_index - 1, y2=OB_bull_avg, extend=extend.left, color=bullcolor, style=line.style_solid, width=1)
+
+    line.delete(linebull2)
+    linebull2 := line.new(x1=bar_index, y1=OB_bull_high, x2=bar_index - 1, y2=OB_bull_high, extend=extend.left, color=bullcolor, style=line.style_dashed, width=1)
+
+    line.delete(linebull3)
+    linebull3 := line.new(x1=bar_index, y1=OB_bull_low, x2=bar_index - 1, y2=OB_bull_low, extend=extend.left, color=bullcolor, style=line.style_dashed, width=1)
+    linebull3
+
+if OB_bear and showbear and show_OB
+    line.delete(linebear1)
+    linebear1 := line.new(x1=bar_index, y1=OB_bear_avg, x2=bar_index - 1, y2=OB_bear_avg, extend=extend.left, color=bearcolor, style=line.style_solid, width=1)
+
+    line.delete(linebear2)
+    linebear2 := line.new(x1=bar_index, y1=OB_bear_high, x2=bar_index - 1, y2=OB_bear_high, extend=extend.left, color=bearcolor, style=line.style_dashed, width=1)
+
+    line.delete(linebear3)
+    linebear3 := line.new(x1=bar_index, y1=OB_bear_low, x2=bar_index - 1, y2=OB_bear_low, extend=extend.left, color=bearcolor, style=line.style_dashed, width=1)
+    linebear3
+
+	
+// ===============================================================================================================================================================================
+// ===== TRENDLINE BREAKOUT DAGANG DUIT ===== TRENDLINE BREAKOUT DAGANG DUIT ===== TRENDLINE BREAKOUT DAGANG DUIT ===== TRENDLINE BREAKOUT DAGANG DUIT ===== TRENDLINE BREAKOUT DA
+// ===============================================================================================================================================================================
+
+
+show_Trendline = input(false, 'Trendline'
+     ,group='Trendline Dagang Duit'
+     , tooltip = SHOW_Trendline)
+
+length = input.int(24)
+k      = input.float(1.6,'Slope',minval=0,step=.1)
+method = input.string('Atr','Slope Calculation Method',
+  options=['Atr','Stdev','Linreg'])
+show   = input(true,'Show Only Confirmed Breakouts')
+// showlinebreak = input(false,'Show Line Break')
+
+upper = 0.,lower = 0.
+slope_ph = 0.,slope_pl = 0.
+source = close
+n = bar_index
+
+ph = ta.pivothigh(length,length)
+pl = ta.pivotlow(length,length)
+slope = switch method
+    'Atr'      => ta.atr(length)/length*k
+    'Stdev'    => ta.stdev(source,length)/length*k
+    'Linreg'   => math.abs(ta.sma(source*bar_index,length)-ta.sma(source,length)*ta.sma(bar_index,length))/ta.variance(n,length)/2*k
+
+slope_ph := ph ? slope : slope_ph[1]
+slope_pl := pl ? slope : slope_pl[1]
+
+upper := show_Trendline and ph ? ph : upper[1] - slope_ph 
+lower := show_Trendline and pl ? pl : lower[1] + slope_pl 
+
+
+single_upper = 0
+single_lower = 0
+single_upper := source[length] > upper ? 0 : ph ? 1 : single_upper[1]
+single_lower := source[length] < lower ? 0 : pl ? 1 : single_lower[1]
+upper_breakout = show_Trendline and single_upper[1] and source[length] > upper and (show ? source > source[length] : 1) 
+lower_breakout = show_Trendline and single_lower[1] and source[length] < lower and (show ? source < source[length] : 1)
+breakall = upper_breakout or lower_breakout
+
+
+var line up_l = na 
+var line dn_l = na
+var label recent_up_break = na 
+var label recent_dn_break = na 
+
+if ph [1] and show_Trendline
+    line.delete(up_l[1])
+    label.delete(recent_up_break[1])
+    
+    up_l := line.new(n-length-1,ph[1],n-length,upper,color=color.rgb(0, 153, 26),
+      extend=extend.right,style=line.style_dashed)
+if pl [1] and show_Trendline
+    line.delete(dn_l[1])
+    label.delete(recent_dn_break[1])
+    
+    dn_l := line.new(n-length-1,pl[1],n-length,lower,color=color.rgb(184, 50, 50),
+      extend=extend.right,style=line.style_dashed)
+
+if ta.crossover(source,upper-slope_ph*length) and show_Trendline
+    label.delete(recent_up_break[1])
+    recent_up_break := label.new(n,low,'B',color=color.rgb(0, 158, 26),
+      textcolor=color.white,style=label.style_label_up,size=size.small)
+
+if ta.crossunder(source,lower+slope_pl*length) and show_Trendline
+    label.delete(recent_dn_break[1])
+    recent_dn_break := label.new(n,high,'B',color=color.rgb(184, 50, 50),
+      textcolor=color.white,style=label.style_label_down,size=size.small)
+	
+
+// ===============================================================================================================================================================================	
+// ===== Input price ===== Input price ===== Input price ===== Input price ===== Input price ===== Input price ===== Input price ===== Input price ===== Input price ===== Input p
+// ===============================================================================================================================================================================
+
+
+show_Alert = input(true, 'Custom Price Alert'
+  , group = 'Custom Price Alert'
+  , tooltip = SHOW_Alert)
+
+priceOne = input(2.00, title='Price 1', group = 'Custom Price Alert')
+priceTwo = input(3.00, title='Price 2', group = 'Custom Price Alert')
+
+
+// ===============================================================================================================================================================================
+// ===== ALL PLOT/PLOTSHAPE ===== ALL PLOT/PLOTSHAPE ===== ALL PLOT/PLOTSHAPE ===== ALL PLOT/PLOTSHAPE ===== ALL PLOT/PLOTSHAPE ===== ALL PLOT/PLOTSHAPE ===== ALL PLOT/PLOTSHAPE 
+// ===============================================================================================================================================================================
+
+// Plot S1
+plotshape(showArrows and buySignal ? atrLow : na, title='S1 Signal Buy', style=shape.triangleup, location=location.absolute, size=size.tiny, color=color.new(buyColor, 0))
+plotshape(showArrows and sellSignal ? atrHigh : na, title='S1 Signal Sell', style=shape.triangledown, location=location.absolute, size=size.tiny, color=color.new(sellColor, 0))
+
+// Plot S2
+plotshape(Buy, 'S2 Signal BUY', shape.labelup, location.belowbar, color.new(#4caf4f, 0), text='BUY', textcolor=color.new(#ffffff, 0),size=size.small)
+plotshape(Sell, 'S2 Signal SELL', shape.labeldown, location.abovebar, color.new(#ff5252, 0), text='SELL', textcolor=color.new(#ffffff, 0),size=size.small)
+plot(tsl, color=colr, linewidth=1, title='S2 Super Line')
+
+// Plot S3
+plotshape(Buy3 ? up3 : na, title='S3 Signal Buy', location=location.absolute, style=shape.circle, size=size.tiny, color=color.new(color.green, 0))
+plotshape(Sell3 ? dn : na, title='S3 Signal Sell', location=location.absolute, style=shape.circle, size=size.tiny, color=color.new(color.red, 0))
+upPlot = plot(trend1 == 1 ? up3 : na, title='S3 SL Up', style=plot.style_linebr, linewidth=2, color=color.new(color.green, 0))
+dnPlot = plot(trend1 == 1 ? na : dn, title='S3 SL Down', style=plot.style_linebr, linewidth=2, color=color.new(color.red, 0))
+iPlot = plot(ohlc4, title='Middle Background S3', style=plot.style_circles, linewidth=0,display=display.none)
+fill(iPlot, upPlot, title='Background Up S3', color=longFillColor, transp=90)
+fill(iPlot, dnPlot, title='Bacground Down S3', color=shortFillColor, transp=90)
+
+//Plot SNR
+plot(top1, title='SNR Up', color=top1 != top1[1] ? na : color.red , linewidth=2)
+plot(bot1, title='SNR Down',color=bot1 != bot1[1] ? na : color.green, linewidth=2)
+
+// Plot EMA
+plot(ema1,color=color.rgb(123, 250, 38),linewidth=1,title="EMA 1",display=display.none)
+plot(ema2,color=color.rgb(0, 225, 255), linewidth=1,title="EMA 2",display=display.none)
+plot(ema3,color=color.rgb(195, 59, 236), linewidth=1,title="EMA 3",display=display.none)
+plot(ema4,color=color.rgb(30, 46, 194), linewidth=1,title="EMA 4",display=display.none)
+plot(ema5,color=color.rgb(148, 16, 16), linewidth=2,title="EMA 5")
+
+// // Plot BB
+// plot(basis_BB, "Middle Bands", color=#FF6D00, offset = offset_BB)
+// p1_BB = plot(upper_BB, "Upper Bands", color=#2962FF, offset = offset_BB)
+// p2_BB = plot(lower_BB, "Lower Bands", color=#2962FF, offset = offset_BB)
+// fill(p1_BB, p2_BB, title = "Background Bands", color=color.rgb(33, 150, 243, 95))
+
+// Plot Ob 
+plotshape(OB_bull and show_OB, title='Bullish OB ', style=shape.triangleup, size=size.tiny, color=bullcolor, textcolor=bullcolor, location=location.belowbar, offset=-ob_period, text='Bullish OB')  // Bullish OB Indicator
+plotshape(OB_bear and show_OB, title='Bearish OB', style=shape.triangledown, color=bearcolor, textcolor=bearcolor, size=size.tiny, location=location.abovebar, offset=-ob_period, text='Bearish OB')  // Bearish OB Indicator
+
+// Plot Trandline
+plot(upper,'Upper Trendline',color = ph ? na : #26a699,offset=-length)  
+plot(lower,'Lower Trendline',color = pl ? na : #ef5350,offset=-length) 
+plotshape(upper_breakout ? low[length] : na,"Break Up Trendline",shape.labelup,location.absolute,breakcolors, -length,text="BREAK UP",textcolor=textcolors,size=size.tiny)
+plotshape(lower_breakout ? high[length] : na,"Break Down Trendline",shape.labeldown,location.absolute,breakcolors2, -length,text="BREAK DOWN",textcolor=textcolors,size=size.tiny)
+
+
+// ===============================================================================================================================================================================
+// ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== ALERT ===== A
+// ===============================================================================================================================================================================
+
+
+alertcondition(buySignal, title='S1 Buy', message='S1 Buy Signal')
+alertcondition(sellSignal, title='S1 Sell', message='S1 Sell Signal')
+alertcondition(sellSignal or buySignal, title='S1 Buy or Sell Signal', message='Check S1 Signal')
+
+alertcondition(Buy, title='S2 Buy Signal', message='S2 Buy')
+alertcondition(Sell, title='S2 Sell Signal', message='S2 Sell')
+alertcondition(Buy or Sell, title='S2 Buy or Sell Signal', message='Check S2 Signal')
+
+alertcondition(Buy3, title='S3 Signal Buy', message='S3 Signal Buy!')
+alertcondition(Sell3, title='S3 Signal Sell', message='S3 Signal Sell!')
+alertcondition(Buy3 or Sell3, title='S3 Buy Or Sell Signal', message='Check S3 Signal')
+
+alertcondition(OB_bull, title='New Bullish OB detected', message='New Bullish OB detected - This is NOT a BUY signal!')
+alertcondition(OB_bear, title='New Bearish OB detected', message='New Bearish OB detected - This is NOT a SELL signal!')
+// alertcondition(OB_bull or OB_bear, title='New OB detected', message='New OB detected')
+
+alertcondition(ta.crossover(source,upper-slope_ph*length),'Trendline Upper Breakout','Price broke upper trendline')
+alertcondition(ta.crossunder(source,lower+slope_pl*length),'Trendline Lower Breakout','Price broke lower trendline')
+// alertcondition(condition = (ta.crossunder(source,lower+slope_pl*length)  or ta.crossover(source,upper-slope_ph*length)),title='Trendline Every Candle Breakout' , message='Indicator Dagang Duit Melihat Sebuah Candle Breakout. Cek Market Segera !!!')
+
+alertcondition(upper_breakout, title='Trendline VALID BREAK UP', message='WOI.. Siap-Siap Buy..!')
+alertcondition(lower_breakout, title='Trendline VALID BREAK DOWN', message='WOI.. Siap-Siap Sell..!')
+alertcondition(lower_breakout or upper_breakout, title='Trendline EVERY VALID BREAKOUT' , message='Indicator Dagang Duit Melihat Sebuah Valid Breakout. Cek Market Segera !!!')
+
+alertcondition(Buy and close > ta.ema(src, line5) , title='Pullback PREPARE BUY', message= 'PREPARE FOR BUY' )
+alertcondition(Sell and close < ta.ema(src, line5) , title='Pullback PREPARE SELL', message= 'PREPARE FOR SELL' )
+alertcondition(Buy and close > ta.ema(src, line5) or Sell and close < ta.ema(src, line5)   , title='Pullback PREPARE BUY or SELL', message= 'PREPARE FOR ENTRY')
+
+alertcondition(ta.cross(close, priceOne) or ta.cross(close, priceTwo), title='Custom Price Alert', message='Price has crossed one of the input prices')
+
+alertcondition (top1 != top1[1], title='SNR UP', message='SNR Up')
+alertcondition (bot1 != bot1[1], title='SNR DOWN', message='SNR Down')
+// alertcondition (top1 != top1[1] or bot1 != bot1[1], title='SNR Signal', message='SNR Signal')
+
+// Export the functions
+export DagangDuit
