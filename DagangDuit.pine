@@ -99,10 +99,6 @@
 
 
 indicator ('Dagang Duit', format = format.price , precision = 6, overlay =true)
-
-// import DagangDuit library
-import DagangDuit.pine
-
 colors = input.string(title='Color Scheme', defval='BRIGHT', options=['DARK', 'BRIGHT'])
 
 // Color Scheme
@@ -757,6 +753,3 @@ alertcondition(ta.cross(close, priceOne) or ta.cross(close, priceTwo), title='Cu
 alertcondition (top1 != top1[1], title='SNR UP', message='SNR Up')
 alertcondition (bot1 != bot1[1], title='SNR DOWN', message='SNR Down')
 // alertcondition (top1 != top1[1] or bot1 != bot1[1], title='SNR Signal', message='SNR Signal')
-
-// Export the functions
-export DagangDuit
